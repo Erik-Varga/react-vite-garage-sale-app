@@ -1,0 +1,24 @@
+.clock-container {
+    /* background-color: rgba(51, 181, 221, 0.45); */
+    /* color: white; */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.clock-container_top, 
+.time {
+    font-size: 1rem;
+    font-weight: 900;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.7rem;
+}
+.colon, 
+.hour, 
+.minute {
+    font-size: 3rem;
+}
+.colon,
+.zone {
+    font-weight: 400;
+}

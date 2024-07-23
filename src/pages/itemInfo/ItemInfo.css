@@ -1,0 +1,26 @@
+
+
+.low-opacity-bg-image {
+    /* --bg-image: url("https://www.marylmartin.com/wp-content/uploads/2020/11/0000818879-1.jpg"); */
+    /* --bg-image: url(${item?.itemImageUrl1}); */
+    --bg-image-opacity: 0.1;
+
+    display: grid;
+    place-content: center;
+    text-align: center;
+    min-height: 500px;
+    position: relative;
+    isolation: isolate;
+}
+.low-opacity-bg-image::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-color: lightblue;
+    opacity: var(--bg-image-opacity);
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+}
+

@@ -1,0 +1,117 @@
+:root {
+  --size: 100px;
+  --gameColor: cyan;
+  --tile: #342956;
+  --correct: #6e50b4;
+  --color1: #dbc2cf;
+  --color2: #9fa2b2;
+  --color3: #3c7a89;
+  --color4: #2e4756;
+  --color5: #16262e;
+}
+
+.puzzle {
+  /* font-family: 'Pacifico', sans-serif; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  height: auto;
+  align-items: center;
+  background-color: var(--color3);
+  margin: 0;
+  padding: 0;
+}
+
+.game {
+  position: relative;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, var(--size));
+  grid-template-rows: repeat(4, var(--size));
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 10px solid var(--color2);
+}
+
+.overlay {
+  border: 1px solid var(--color2);
+  pointer-events: none;
+  z-index: 20;
+}
+
+.number{
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--tile);
+  font-size: 50px;
+  color: white;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: left .4s ease-in-out, top .4s ease-in-out;
+}
+
+.number.correct{
+  background: var(--correct);
+}
+
+.number.slot--0{left: 0px; top: 0;}
+.number.slot--1{left: calc(var(--size)); top: 0;}
+.number.slot--2{left: calc(2 * var(--size)); top: 0;}
+.number.slot--3{left: calc(3 * var(--size)); top: 0;}
+.number.slot--4{left: 0; top: calc(var(--size));}
+.number.slot--5{left: calc(var(--size)); top: calc(var(--size));}
+.number.slot--6{left: calc(2 * var(--size) ); top: calc(var(--size));}
+.number.slot--7{left: calc(3 * var(--size)); top: calc(var(--size));}
+.number.slot--8{left: 0; top: calc(2 * var(--size) );}
+.number.slot--9{left: calc(var(--size)); top: calc(2 * var(--size) );}
+.number.slot--10{left: calc(2 * var(--size) ); top: calc(2 * var(--size) );}
+.number.slot--11{left: calc(3 * var(--size)); top: calc(2 * var(--size) );}
+.number.slot--12{left: 0; top: calc(3 * var(--size));}
+.number.slot--13{left: calc(var(--size)); top: calc(3 * var(--size));}
+.number.slot--14{left: calc(2 * var(--size) ); top: calc(3 * var(--size));}
+.number.slot--15{left: calc(3 * var(--size)); top: calc(3 * var(--size));}
+.number.disabled{pointer-events: none; background-color:transparent;}
+
+.button-wrapper{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.newGameButton {
+  border: 0 transparent;
+  background-color: var(--correct);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.newGameButton:hover{
+  background-color: var(--tile);
+}
+
+.winner{
+  position: absolute;
+  background: var(--tile);
+  border-radius: 10px;
+  top: 0;
+  z-index: 100;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
